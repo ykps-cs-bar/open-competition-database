@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>New Contest</title>
+</head>
+
+<body style="background-color:#e8eff5">
+  <section class="cd-timeline js-cd-timeline">
+    <div class="container max-width-lg cd-timeline__container">
+
+      
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--picture">
+          <img src="assets/img/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <textarea type="text" id="InputTitle" placeholder="Enter title" class="mock_h2" rows="1"></textarea>
+          <textarea id="InputDescription" type = "text" placeholder="Enter description" class="color-contrast-medium" cols="53"></textarea>
+          <p class="color-contrast-medium"> </p>
+
+          <div class="flex justify-between items-center">
+            <textarea id="InputDate" placeholder="Enter description" style="background: transparent" class="cd-timeline__date" maxlength="50"></textarea>
+            <a class="btn btn--subtle">Read more</a>
+            <textarea id="InputLink" type = "text" placeholder="Enter link" class="color-contrast-medium"></textarea>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+    </div>
+  </section> <!-- cd-timeline --> 
+  <script src="assets/js/main.js"></script>
+
+  <button onclick="displayText()">Display</button>
+  <br>
+  <textarea id="displayBox1" readonly></textarea>
+  <textarea id="displayBox2" readonly></textarea>
+  <textarea id="displayBox3" readonly></textarea>
+  <textarea id="displayBox4" readonly></textarea>
+
+
+
+
+  <script>
+    textarea = document.querySelector("#InputTitle");
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+
+    textarea = document.querySelector("#InputDescription");
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+
+    textarea = document.querySelector("#InputDate");
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+
+    textarea = document.querySelector("#InputLink");
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+
+    function displayText() {
+      var input1 = document.getElementById("InputTitle").value;
+      var displayBox1 = document.getElementById("displayBox1");
+      displayBox1.value = input1;
+      var input2 = document.getElementById("InputDescription").value;
+      var displayBox2 = document.getElementById("displayBox2");
+      displayBox2.value = input2;
+      var input3 = document.getElementById("InputDate").value;
+      var displayBox3 = document.getElementById("displayBox3");
+      displayBox3.value = input3;
+      var input4 = document.getElementById("InputLink").value;
+      var displayBox4 = document.getElementById("displayBox4");
+      displayBox4.value = input4;
+    }
+  </script>
+</body>
+</html>
