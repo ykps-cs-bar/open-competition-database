@@ -1,0 +1,5 @@
+# MacOS system resource file
+.DS_Store
+
+# JS support libraries
+node_modules
