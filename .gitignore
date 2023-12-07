@@ -3,3 +3,6 @@
 
 # JS support libraries
 node_modules
+
+# Passwords
+secret
