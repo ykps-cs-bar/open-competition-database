@@ -1,5 +1,6 @@
-# MacOS system resource file
+# macOS resource file
 .DS_Store
+Icon?
 
 # JS support libraries
 node_modules
