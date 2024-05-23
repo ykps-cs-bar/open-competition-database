@@ -1,0 +1,15 @@
+{
+    "name": "USACO 2023-2024 Third Contest",
+    "tags": [
+        "computer science"
+    ],
+    "difficulty": 4.0,
+    "authority": 4.0,
+    "description": "The UK Chemistry Olympiad has run annually since 1983. It is a competition designed not only for the purpose of selecting four young chemists to represent the UK at the International Chemistry Olympiad (IChO) in the summer, but also for students to enjoy participating in competitive chemistry. It consists of two rounds before the IChO team is selected.",
+    "time-category": "free-submission",
+    "dates": {
+        "start-date": "2024-02-16T00:00:00.000Z",
+        "end-date": "2024-02-19T10:00:00.000Z"
+    },
+    "url": "https://usaco.org/index.php"
+}
