@@ -1,20 +1,29 @@
 const mongoose = require("mongoose");
+const urlRegex =
+    /^(?:(http|https|ftp):\/\/)?((|[\w-]+\.)+[a-z0-9]+)(?:(\/[^/?#]+)*)?(\?[^#]+)?(#.+)?$/i;
+const competitionCategories = ["Others"];
 
-const timelineNodeSchema = new mongoose.Schema({
-    title: { String, required: true },
-    description: { String, required: true },
-    time: { Date, required: true },
+const nodeSchema = new mongoose.Schema({
+    title: { type: String, required: true, trim: true },
+    description: { type: String, trim: true },
+    url: { type: String, lowercase: true, match: urlRegex },
+    timestamp: { type: Date, required: true, default: Date.now },
     duration: Number,
+    father: { type: mongoose.Schema.Types.ObjectId, ref: "events" },
 });
 
-const timelineSchema = new mongoose.Schema({
-    title: { String, required: true },
-    description: { String, required: true },
-    ordinaryNodes: [TimelineNode],
-    primaryNodes: [TimelineNode],
+const eventSchema = new mongoose.Schema({
+    title: { type: String, required: true, trim: true },
+    description: { type: String, required: true, trim: true },
+    category: [
+        { type: String, default: "Others", enum: competitionCategories },
+    ],
+    primaryNodes: [{ type: mongoose.Schema.Types.ObjectId, ref: "pnodes" }],
+    secondaryNodes: [{ type: mongoose.Schema.Types.ObjectId, ref: "snodes" }],
 });
 
-const TimelineNode = mongoose.model("TimelineNode", timelineNodeSchema);
-const Timeline = mongoose.model("Timeline", timelineSchema);
+const SNode = mongoose.model("SNode", nodeSchema);
+const PNode = mongoose.model("PNode", nodeSchema);
+const Event = mongoose.model("Event", eventSchema);
 
-module.exports = { Timeline, TimelineNode };
+module.exports = { Event, PNode, SNode };
