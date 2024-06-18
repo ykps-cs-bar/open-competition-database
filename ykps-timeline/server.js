@@ -1,17 +1,15 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const { connect } = require("mongoose");
 const cors = require("cors");
-const timelineModels = require("./timeline-models");
+const { PNode } = require("./timeline-models.js");
+
 const app = express();
 const port = 3000;
 
 // 连接 MongoDB
-mongoose
-    .connect("mongodb://localhost:27017/timeline")
+connect("mongodb://localhost:27017/timeline")
     .then(() => console.log("MongoDB connected."))
     .catch((err) => console.error("MongoDB connection error:", err));
-
-const PNode = timelineModels.PNode;
 
 app.use(cors());
 
@@ -51,11 +49,11 @@ app.get("/api/data", (req, res) => {
 });
 
 app.get("load-timeline.js", (req, res) => {
-    res.sendFile(__dirname + "/load-timeline.js");
+    res.sendFile("./public/load-timeline.js");
 });
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile("./public/index.html");
 });
 
 // 启动服务器

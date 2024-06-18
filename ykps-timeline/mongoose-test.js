@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
-const { Event, PNode, SNode } = require("./timeline-models"); // Assuming your models are in a file named 'models.js'
+import { connect, disconnect } from "mongoose";
+import { Event, PNode, SNode } from "./timeline-models"; // Assuming your models are in a file named 'models.js'
 
 const mongodbURL = "mongodb://127.0.0.1:27017/competition-timeline";
 
 async function seedDatabase() {
     try {
         // Connect to the database
-        await mongoose.connect(mongodbURL, {
+        await connect(mongodbURL, {
             useUnifiedTopology: true,
         });
 
@@ -58,7 +58,7 @@ async function seedDatabase() {
         process.exit(1);
     } finally {
         // Disconnect from the database
-        await mongoose.disconnect();
+        await disconnect();
     }
 }
 
