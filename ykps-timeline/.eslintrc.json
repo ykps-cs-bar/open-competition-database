@@ -1,8 +1,0 @@
-{
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "babelOptions": {
-            "configFile": "./babel.config.js"
-        }
-    }
-}
