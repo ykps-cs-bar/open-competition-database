@@ -1,13 +1,14 @@
-const express = require("express");
-const { connect } = require("mongoose");
-const cors = require("cors");
-const { PNode } = require("./timeline-models.js");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import { PNode, SNode, Event } from "./timeline-models";
 
 const app = express();
 const port = 3000;
 
 // 连接 MongoDB
-connect("mongodb://localhost:27017/timeline")
+mongoose
+    .connect("mongodb://localhost:27017/timeline")
     .then(() => console.log("MongoDB connected."))
     .catch((err) => console.error("MongoDB connection error:", err));
 
@@ -26,15 +27,15 @@ app.use(cors());
 // });
 
 app.get("/api/data", (req, res) => {
-    const lastDataId = req.query.lastDataId; // 获取最后加载的数据 ID
+    const lastDataId = req.query.lastDataId;
 
     // 查询数据
-    PNode.find({ _id: { $gt: lastDataId } }) // 替换为您的查询条件
-        .sort({ timestamp: 1 }) // 按 timestamp 升序排序
-        .limit(5) // 限制每次加载的数据数量
+    PNode.find({ _id: { $gt: lastDataId } })
+        .sort({ timestamp: 1 })
+        .limit(5)
         .then((data) => {
             // 返回数据，按 timestamp 排序
-            data.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)); // 按 timestamp 排序
+            data.sort();
 
             // 返回数据
             res.json({
