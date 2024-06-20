@@ -1,0 +1,20 @@
+{
+    "name": "timeline-backend",
+    "version": "1.0.0",
+    "description": "Backend for YK Pao external comtetition timeline",
+    "main": "server.js",
+    "devDependencies": {},
+    "scripts": {
+        "start": "vue serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ykps-cs-bar/External-Competition-Timeline.git"
+    },
+    "author": "Skylar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ykps-cs-bar/External-Competition-Timeline/issues"
+    },
+    "homepage": "https://github.com/ykps-cs-bar/External-Competition-Timeline#readme"
+}

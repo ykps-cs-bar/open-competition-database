@@ -1,6 +1,6 @@
 {
   "name": "timeline-frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -39,5 +39,17 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "description": "Vue frontend for YK Pao external competition timeline",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ykps-cs-bar/External-Competition-Timeline.git"
+  },
+  "author": "Skylar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ykps-cs-bar/External-Competition-Timeline/issues"
+  },
+  "homepage": "https://github.com/ykps-cs-bar/External-Competition-Timeline#readme"
 }
