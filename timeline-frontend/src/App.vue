@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <center>
+        <AppTimeline>
+            <AppTimelineNode>
+                <h4>事件标题1</h4>
+                <p>事件详情1</p>
+            </AppTimelineNode>
+            <AppTimelineNode>
+                <h4>事件标题2</h4>
+                <p>事件详情2</p>
+            </AppTimelineNode>
+            <AppTimelineNode>
+                <h4>事件标题3</h4>
+                <p>事件详情3</p>
+            </AppTimelineNode>
+            <AppTimelineNode>
+                <h4>事件标题4</h4>
+                <p>事件详情4</p>
+            </AppTimelineNode>
+        </AppTimeline>
+    </center>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppTimeline from './components/Timeline.vue';
+import AppTimelineNode from './components/TimelineNode.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    components: {
+        AppTimeline,
+        AppTimelineNode
+    }
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

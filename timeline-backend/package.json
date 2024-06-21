@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "description": "Backend for YK Pao external comtetition timeline",
     "main": "server.js",
-    "devDependencies": {},
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21"
+    },
     "scripts": {
         "start": "vue serve"
     },
@@ -16,5 +19,12 @@
     "bugs": {
         "url": "https://github.com/ykps-cs-bar/External-Competition-Timeline/issues"
     },
-    "homepage": "https://github.com/ykps-cs-bar/External-Competition-Timeline#readme"
+    "homepage": "https://github.com/ykps-cs-bar/External-Competition-Timeline#readme",
+    "dependencies": {
+        "@types/mongoose": "^5.11.97",
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "mongoose": "^8.4.3",
+        "typescript": "^5.4.5"
+    }
 }
