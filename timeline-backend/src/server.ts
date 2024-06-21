@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { PNode, SNode, Event } from "./timeline-models";
+import { PNode, SNode, Event } from "./mongo-schema.js";
 
 const app = express();
 const port = 3000;
@@ -9,8 +9,12 @@ const port = 3000;
 // 连接 MongoDB
 mongoose
     .connect("mongodb://localhost:27017/timeline")
-    .then(() => console.log("MongoDB connected."))
-    .catch((err) => console.error("MongoDB connection error:", err));
+    .then(() => {
+        console.log("MongoDB connected.");
+    })
+    .catch((err: string) => {
+        console.error("MongoDB connection error:", err);
+    });
 
 app.use(cors());
 

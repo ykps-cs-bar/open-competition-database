@@ -21,6 +21,7 @@
     },
     "homepage": "https://github.com/ykps-cs-bar/External-Competition-Timeline#readme",
     "dependencies": {
+        "@types/mongoose": "^5.11.97",
         "cors": "^2.8.5",
         "express": "^4.19.2",
         "mongoose": "^8.4.3",
