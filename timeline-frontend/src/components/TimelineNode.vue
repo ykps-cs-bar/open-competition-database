@@ -1,7 +1,6 @@
 <template>
-    <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
+    <div class="node">
+        <div class="node-description">
             <!-- 使用slot允许外部内容的插入 -->
             <slot></slot>
         </div>
@@ -13,20 +12,15 @@ export default {
 };
 </script>
 <style scoped>
-.timeline-item {
+.node {
     display: flex;
     align-items: center;
     margin: 10px 0;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
 
-.timeline-marker {
-    width: 20px;
-    height: 20px;
-    background-color: #2196f3;
-    border-radius: 50%;
-}
-
-.timeline-content {
+.node-description {
     margin-left: 20px;
 }
 </style>
