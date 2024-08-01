@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // 提供静态文件服务
-app.use(express.static(path.join(__dirname, "@/timeline-frontend/public")));
+app.use(express.static(path.join(__dirname, "../../timeline-frontend/public")));
 
 // API路由
 app.get("/api/data", (req, res) => {
