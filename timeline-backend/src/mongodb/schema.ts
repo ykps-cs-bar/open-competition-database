@@ -1,7 +1,8 @@
 import { Schema, model } from "mongoose";
+
 const urlRegex =
     /^(?:(http|https|ftp):\/\/)?((|[\w-]+\.)+[a-z0-9]+)(?:(\/[^/?#]+)*)?(\?[^#]+)?(#.+)?$/i;
-const competitionCategories = ["Others"];
+const competitionCategories = ["Others"]; // Add more categories here
 
 const nodeSchema = new Schema({
     title: { type: String, required: true, trim: true },

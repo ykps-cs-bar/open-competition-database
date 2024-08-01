@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-    name: 'AppTimeline',
+    name: "AppTimeline",
 };
 </script>
 <style scoped>
