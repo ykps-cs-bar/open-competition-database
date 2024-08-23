@@ -1,3 +1,3 @@
-# Timeline
+# Open Competition Database
 
-This is a simple timeline app designed for school and students.
+This repository was deprecated and archived, please go to <https://github.com/Arcadi4/open-competition-database>.
